@@ -1,3 +1,100 @@
+$zal: #00573a;
+
+@mixin borderis() {
+	border: 1px solid white;
+}
+
+@mixin centras() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 body {
-	background: purple;
+	background: $zal;
+	color: white;
+}
+
+.app-wrapper {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	* {
+	}
+	.apsas {
+		width: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		h1 {
+			text-align: center;
+		}
+	}
+	.wrapper {
+		/* 		align-items: center; */
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 20% 50% 30%;
+		.clock {
+			@include centras();
+			flex-direction: column;
+			padding: 3em;
+		}
+		.lengths {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			#break-label,
+			#session-label {
+				@include borderis();
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: 50% 50%;
+				button {
+					width: 30%;
+					cursor: pointer;
+					&:hover {
+						opacity: 0.9;
+					}
+				}
+			}
+			#break-label > p,
+			#session-label > p {
+				grid-column: span 3;
+				padding: 1em;
+			}
+			#break-label > div,
+			#session-label > div {
+				@include centras();
+				grid-column: span 1;
+				@include borderis();
+				background: brown;
+			}
+		}
+		.panel {
+			display: flex;
+		}
+		.panel > * {
+			flex: 3;
+			@include centras();
+			background: grey;
+			@include borderis();
+			cursor: pointer;
+			&:hover {
+				opacity: 0.4;
+			}
+		}
+	}
+	h4,
+	h5 {
+		text-align: center;
+	}
 }
