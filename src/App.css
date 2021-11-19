@@ -7,71 +7,96 @@ body {
   background: #00573a;
   color: white; }
 
-.app-wrapper {
+.App {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
-  .app-wrapper .apsas {
-    width: 300px;
+  .App .apsas {
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around; }
-    .app-wrapper .apsas h1 {
+    .App .apsas h1 {
       text-align: center; }
-  .app-wrapper .wrapper {
+  .App .wrapper {
     /* 		align-items: center; */
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 20% 50% 30%; }
-    .app-wrapper .wrapper .clock {
+    grid-template-columns: 1fr; }
+    .App .wrapper .clock {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 3em; }
-    .app-wrapper .wrapper .lengths {
+      padding: 1em;
+      font-size: 3rem;
+      border: 3px solid white;
+      border-radius: 3px; }
+    .App .wrapper .lengths {
       display: flex;
       flex-direction: row;
       justify-content: center; }
-      .app-wrapper .wrapper .lengths #break-label,
-      .app-wrapper .wrapper .lengths #session-label {
-        border: 1px solid white;
+      .App .wrapper .lengths #break-label,
+      .App .wrapper .lengths #session-label {
         display: grid;
+        padding: 1em;
+        text-align: center;
+        width: 100%;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 50% 50%; }
-        .app-wrapper .wrapper .lengths #break-label button,
-        .app-wrapper .wrapper .lengths #session-label button {
+        .App .wrapper .lengths #break-label .my,
+        .App .wrapper .lengths #session-label .my {
+          color: black; }
+        .App .wrapper .lengths #break-label button,
+        .App .wrapper .lengths #session-label button {
           width: 30%;
           cursor: pointer; }
-          .app-wrapper .wrapper .lengths #break-label button:hover,
-          .app-wrapper .wrapper .lengths #session-label button:hover {
+          .App .wrapper .lengths #break-label button:hover,
+          .App .wrapper .lengths #session-label button:hover {
             opacity: 0.9; }
-      .app-wrapper .wrapper .lengths #break-label > p,
-      .app-wrapper .wrapper .lengths #session-label > p {
+      .App .wrapper .lengths #break-label > p,
+      .App .wrapper .lengths #session-label > p {
         grid-column: span 3;
-        padding: 1em; }
-      .app-wrapper .wrapper .lengths #break-label > div,
-      .app-wrapper .wrapper .lengths #session-label > div {
+        padding: 0.3em;
+        font-size: 1.2rem; }
+      .App .wrapper .lengths #break-label > div,
+      .App .wrapper .lengths #session-label > div {
         display: flex;
         justify-content: center;
         align-items: center;
         grid-column: span 1;
         border: 1px solid white;
-        background: brown; }
-    .app-wrapper .wrapper .panel {
+        background: white;
+        margin: 2px;
+        border-radius: 3px; }
+      .App .wrapper .lengths #break-increment,
+      .App .wrapper .lengths #break-decrement,
+      .App .wrapper .lengths #session-increment,
+      .App .wrapper .lengths #session-decrement {
+        cursor: pointer; }
+      .App .wrapper .lengths #break-increment:active,
+      .App .wrapper .lengths #break-decrement:active,
+      .App .wrapper .lengths #session-increment:active,
+      .App .wrapper .lengths #session-decrement:active {
+        opacity: 0.9; }
+    .App .wrapper .panel {
       display: flex; }
-    .app-wrapper .wrapper .panel > * {
+    .App .wrapper .panel > * {
       flex: 3;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: grey;
+      color: black;
+      background: white;
+      border-radius: 3px;
+      padding: 1em;
+      margin: 2px;
       border: 1px solid white;
+      border: 4px solid white;
       cursor: pointer; }
-      .app-wrapper .wrapper .panel > *:hover {
+      .App .wrapper .panel > *:active {
         opacity: 0.4; }
-  .app-wrapper h4,
-  .app-wrapper h5 {
+  .App h4,
+  .App h5 {
     text-align: center; }
